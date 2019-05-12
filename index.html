@@ -45,21 +45,30 @@
 	.blue {width:450px; height: 550px; background-color :#65d1cd; position: absolute;z-index: 3}
 	.happy {position: absolute; right:0; top:200px;}
 	.happy2 {position: absolute;right:0; top:200px;}
-	.scar{position: absolute;right:0; top:200px; animation: sc 8s infinite alternate}
+	.scar{position: absolute;right:0; top:200px; animation: sc 5s infinite alternate}
 	@keyframes sc{
-		from{right:-500px;}
+		from{right:-50px;}
 		to{}
 	}
-	.create{position:absolute;font-family: 'Dokdo', cursive; font-size: 80px; left:130px; top:530px; color:#ffa97e;}
+	.create{position:absolute;font-family: 'Dokdo', cursive; font-size: 80px; left:130px; top:530px; color:#ffa97e; opacity: 0.5; animation: op 0.5s infinite alternate}
+	@keyframes op{
+		from{}
+		to{opacity: 1;}
+	}
+
 
 	.firth {position:relative; height: 1500px;z-index: 3 }
-	.toon {width:350px; position: absolute; left:200px; top:420px;}
-	.ziro {width:1000px; position:absolute; left:-30px; top:550px; animation: ziro 200s infinite linear; perspective: 100px}
+	.toon {width:350px; position: absolute; left:200px; top:420px; animation: toon 4s infinite alternate ease-out}
+	@keyframes toon{
+		from{left:-400px;}
+		to{}
+	}
+	.ziro {width:1000px; position:absolute; left:-30px; top:550px; animation: ziro 100s infinite linear; perspective: 100px}
 	@keyframes ziro{
 		from{}
 		to{transform: rotate3d(1,0.5,0.5,360deg);}
 	}
-	.people {font-family: 'Dokdo', cursive; position:absolute; writing-mode: tb-rl; font-size: 60px;  color :#65d1cd; top:400px; font-weight: 800px; animation: peo 2s infinite alternate linear }
+	.people {font-family: 'Dokdo', cursive; position:absolute; writing-mode: tb-rl; font-size: 60px;  color :#65d1cd; top:400px; font-weight: 800px; animation: peo 1s infinite alternate linear }
 	@keyframes peo{
 		from{}
 		to{color:#ffa97e}
@@ -77,11 +86,26 @@
 	.f1{width:15px; ; z-index:1; position:absolute; color:white;}
 	.f2{z-index: 1;position: absolute;}
 	.f3{z-index: 1;position: absolute;}
+	.ar{position:absolute; width:500px; height: 500px; z-index: 999; top: 3800px; animation: attack 2s infinite linear; z-index: 999;}
+	@keyframes attack{
+		from{left: 1000px;}
+		to{left: 500px;}
+	}
+	
+	.bl{position:absolute;width:1000px; z-index: 998;left: 200px;top:3700px; opacity: 0;animation: bld 2s infinite linear;}
+	@keyframes bld{
+		from{}
+		to{opacity: 1;}
+	}
+	
+
 </style>
 <body>
 		</div>
 	<div class="wrap2">
 	<div class="wrap">
+		<img src="aroow.png" class="ar">
+		<img src="blood.png" class="bl">
 		<section class="first">
 		<p class="justice">뭐, 정의가 이긴다고?<br>그거야 그렇지! 승자만이 정의다.</p>
 		<img src="./doflamingo.png" class="mingo">
@@ -115,15 +139,17 @@
 	
 			
 		</section>
+		
 	</div>
 <div class="f1" style="left:10px; bottom:400px; position: fixed">
 			<img src="./fire.gif" style="width:200px; z-index: 1">
 </div>
-<div class="f2" style="left:600px; top:20px; position: fixed">
+<div class="f2" style="left:600px; top:20px;">
 <img src="./fire.gif" style="width:400px; z-index: 1">
 </div>
-<div class="f3" style="left:1200px; top:20px; position: fixed">
+<div class="f3" style="left:1200px; top:20px;">
 <img src="./fire.gif" style="width:300px; z-index: 1">
+
 </div>
 </body>
 </html>
